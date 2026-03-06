@@ -25,3 +25,9 @@
 4. Сайт будет доступен по адресу: `https://nikita31415.github.io/valeron2026/`
 
 ## Структура проекта
+├── index.html # Главная страница
+├── css/
+│ └── style.css # Все стили
+├── js/
+│ └── script.js # JavaScript (опционально)
+└── README.md # Документация
