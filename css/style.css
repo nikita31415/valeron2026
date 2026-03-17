@@ -1,3 +1,53 @@
+/* ===== СТАТИСТИКА ПЕРЕЕЗДОВ (Travel Stats) ===== */
+.travel-stats {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0 16px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 6px 16px 6px 12px;
+    border-radius: 60px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(230, 126, 34, 0.15);
+    /* Адаптация под оранжевую тему */
+}
+
+.stat-icon {
+    color: #e67e22; /* Основной оранжевый */
+    font-size: 0.9rem;
+    width: 20px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #4f7a98; /* Голубовато-серый из текста */
+    margin-right: 2px;
+    font-weight: 400;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #0d4b6b; /* Темно-синий из заголовков */
+    font-size: 0.9rem;
+}
+
+/* Для темной темы (если когда-нибудь понадобится) */
+@media (prefers-color-scheme: dark) {
+    .stat-item {
+        background: rgba(30, 50, 70, 0.6);
+        border-color: rgba(230, 126, 34, 0.3);
+    }
+    .stat-icon { color: #f39c12; }
+    .stat-value { color: #ecf0f1; }
+}
 /* ===== ОСНОВНЫЕ СТИЛИ ===== */
 * {
     margin: 0;
