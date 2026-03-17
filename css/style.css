@@ -19,7 +19,6 @@ body {
     width: 100%;
 }
 
-/* ===== ОСНОВНАЯ КАРТОЧКА ===== */
 .card {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
@@ -127,7 +126,7 @@ h1 i {
     box-shadow: 0 16px 24px -12px #146e94;
 }
 
-/* Город проживания */
+/* Город проживания - единый стиль для всех дней */
 .city-header {
     display: flex;
     align-items: center;
@@ -137,7 +136,7 @@ h1 i {
     color: #0d3f58;
     margin-bottom: 14px;
     background: rgba(255, 255, 240, 0.4);
-    padding: 6px 16px;
+    padding: 8px 20px;
     border-radius: 60px;
     width: fit-content;
     border: 1px solid rgba(255, 255, 200, 0.6);
@@ -148,14 +147,11 @@ h1 i {
     color: #e67e22;
 }
 
-/* Стиль для переездов */
-.city-header.transfer {
-    background: rgba(230, 246, 255, 0.6);
-    border-color: #b0d4f0;
-}
-
-.city-header.transfer i:first-child {
+/* Стрелка переезда */
+.transfer-arrow {
     color: #2980b9;
+    font-size: 1.2rem;
+    margin: 0 5px;
 }
 
 /* Части дня */
@@ -211,7 +207,86 @@ h1 i {
     margin-top: 8px;
 }
 
-/* ===== БЛОК ПРОЖИВАНИЯ (КОМПАКТНЫЙ) ===== */
+/* ===== СТАТИСТИКА ПЕРЕЕЗДОВ (Travel Stats) ===== */
+.travel-stats {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0 16px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 6px 16px 6px 12px;
+    border-radius: 60px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(230, 126, 34, 0.15);
+}
+
+.stat-icon {
+    color: #e67e22;
+    font-size: 0.9rem;
+    width: 20px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: #4f7a98;
+    margin-right: 2px;
+    font-weight: 400;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #0d4b6b;
+    font-size: 0.9rem;
+}
+
+/* ===== ССЫЛКИ НА КАРТЫ ===== */
+.map-link {
+    color: #2980b9;
+    text-decoration: none;
+    border-bottom: 1px dashed #2980b9;
+    transition: all 0.2s;
+}
+
+.map-link:hover {
+    color: #1f618d;
+    border-bottom: 1px solid #1f618d;
+}
+
+.map-link i {
+    font-size: 0.8rem;
+    margin-left: 4px;
+    opacity: 0.7;
+}
+
+.map-link:hover i {
+    opacity: 1;
+}
+
+.city-header a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.city-header a:hover {
+    color: #2980b9;
+}
+
+.city-header a:hover i {
+    color: #2980b9;
+}
+
+/* ===== БЛОК ПРОЖИВАНИЯ ===== */
 .hotel-compact {
     margin-top: 45px;
     background: white;
@@ -315,20 +390,106 @@ h1 i {
     opacity: 0.8;
 }
 
+/* ===== СВОДКА ПЕРЕЕЗДОВ ===== */
+.travel-summary {
+    margin-top: 30px;
+    background: #f0faff;
+    border-radius: 40px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.travel-summary h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #0f3f58;
+}
+
+.travel-summary h3 i {
+    color: #e67e22;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.summary-date {
+    min-width: 80px;
+    font-weight: 600;
+    color: #0f3f58;
+}
+
+.summary-route {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 60px;
+    flex: 1;
+    border: 1px solid rgba(230, 126, 34, 0.1);
+    flex-wrap: wrap;
+}
+
+.summary-stats {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    color: #4f7a98;
+}
+
+.summary-stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.summary-stats i {
+    color: #e67e22;
+}
+
+.summary-total {
+    margin-top: 15px;
+    background: #d4e9f7;
+    border-radius: 60px;
+    padding: 8px 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
 /* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 900px) {
+    .summary-stats {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 @media (max-width: 800px) {
     .compact-item {
         border-radius: 30px;
         width: 100%;
         justify-content: center;
     }
-    
     .card {
         padding: 24px 20px;
     }
-    
     h1 {
         font-size: 2rem;
+    }
+    .summary-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .summary-route {
+        width: 100%;
     }
 }
 
@@ -336,7 +497,6 @@ h1 i {
     .row {
         flex-wrap: wrap;
     }
-    
     .date-badge {
         width: 100%;
         display: flex;
@@ -344,26 +504,24 @@ h1 i {
         gap: 12px;
         padding: 10px;
     }
-    
     .date-badge .day {
         font-size: 1.8rem;
     }
-    
     .timeline::before {
         left: 20px;
     }
-    
     .city-header {
         font-size: 1.1rem;
     }
-    
     .day-part {
         gap: 10px;
     }
-    
     .part-tag {
         min-width: 60px;
         padding: 4px 12px;
+    }
+    .travel-stats {
+        justify-content: center;
     }
 }
 
@@ -371,71 +529,21 @@ h1 i {
     body {
         padding: 15px 10px;
     }
-    
     .card {
         border-radius: 30px;
     }
-    
     .event-card {
         padding: 15px;
     }
-    
     .compact-item {
         flex-direction: column;
         align-items: flex-start;
     }
-    
     .compact-divider {
         display: none;
     }
-}
-/* ===== СТАТИСТИКА ПЕРЕЕЗДОВ (Travel Stats) ===== */
-.travel-stats {
-    display: flex;
-    gap: 12px;
-    margin: 12px 0 16px 0;
-    flex-wrap: wrap;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(4px);
-    padding: 6px 16px 6px 12px;
-    border-radius: 60px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(230, 126, 34, 0.15);
-    /* Адаптация под оранжевую тему */
-}
-
-.stat-icon {
-    color: #e67e22; /* Основной оранжевый */
-    font-size: 0.9rem;
-    width: 20px;
-    text-align: center;
-}
-
-.stat-label {
-    font-size: 0.75rem;
-    color: #4f7a98; /* Голубовато-серый из текста */
-    margin-right: 2px;
-    font-weight: 400;
-}
-
-.stat-value {
-    font-weight: 700;
-    color: #0d4b6b; /* Темно-синий из заголовков */
-    font-size: 0.9rem;
-}
-
-/* Для темной темы (если когда-нибудь понадобится) */
-@media (prefers-color-scheme: dark) {
     .stat-item {
-        background: rgba(30, 50, 70, 0.6);
-        border-color: rgba(230, 126, 34, 0.3);
+        width: 100%;
+        justify-content: center;
     }
-    .stat-icon { color: #f39c12; }
-    .stat-value { color: #ecf0f1; }
 }
