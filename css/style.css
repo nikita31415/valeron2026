@@ -219,7 +219,7 @@ h1 i {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(200, 210, 220, 0.7);
+    background: rgba(220, 225, 230, 0.8);
     backdrop-filter: blur(4px);
     padding: 6px 16px 6px 12px;
     border-radius: 60px;
