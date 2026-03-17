@@ -557,52 +557,52 @@
                 </div>
             </div>
 
-<!-- БЛОК ДЛЯ БРОНИРОВАНИЯ ОТЕЛЕЙ (ВЫПАДАШКА) -->
-<div class="hotel-dropdown">
-    <input type="checkbox" id="hotel-toggle" class="dropdown-toggle">
-    <label for="hotel-toggle" class="dropdown-label">
-        <i class="fas fa-hotel"></i> Даты для бронирования 
-        <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </label>
+            <!-- БЛОК ДЛЯ БРОНИРОВАНИЯ ОТЕЛЕЙ (СПОЙЛЕР) -->
+<div class="hotel-spoiler">
+    <button class="spoiler-btn" onclick="this.parentElement.classList.toggle('active')">
+        <i class="fas fa-hotel"></i> Даты для бронирования
+        <i class="fas fa-eye spoiler-icon"></i>
+    </button>
     
-    <div class="dropdown-content">
-        <div class="hotel-compact" style="margin-top: 15px;">
-            <div class="compact-grid">
-                <div class="compact-item">
-                    <span class="compact-city">🏙️ Тбилиси</span>
-                    <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 11 · 18</div>
-                    <div class="compact-divider"></div>
-                    <span class="compact-note">заезд 11.07 в 14:00 · выезд 12.07 в 10:00</span>
-                    <span class="compact-note">заезд 18.07 в 20:00 · выезд в 19.07 12:00</span>
+    <div class="spoiler-content">
+        <div class="hotel-compact">
+                <h2><i class="fas fa-hotel"></i> Даты для бронирования</h2>
+                <div class="compact-grid">
+                    <div class="compact-item">
+                        <span class="compact-city">🏙️ Тбилиси</span>
+                        <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 11 · 18</div>
+                        <div class="compact-divider"></div>
+                        <span class="compact-note">заезд 11.07 в 14:00 · выезд 12.07 в 10:00</span>
+                        <span class="compact-note">заезд 18.07 в 20:00 · выезд в 19.07 12:00</span>
+                    </div>
+                    <div class="compact-item">
+                        <span class="compact-city">⛰️ Степанцминда</span>
+                        <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 12 · 13</div>
+                        <div class="compact-divider"></div>
+                        <span class="compact-note">заезд 12.07 в 19:00 · выезд 14.07 в 10:00</span>
+                    </div>
+                    <div class="compact-item">
+                        <span class="compact-city">🏛️ Кутаиси</span>
+                        <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 14 · 15</div>
+                        <div class="compact-divider"></div>
+                        <span class="compact-note">заезд 14.07 в 16:00 · выезд 16.07 в 12:00</span>
+                    </div>
+                    <div class="compact-item">
+                        <span class="compact-city">🌊 Батуми</span>
+                        <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 16 · 17</div>
+                        <div class="compact-divider"></div>
+                        <span class="compact-note">заезд 16.07 в 15:00 · выезд 18.07 в 10:00</span>
+                    </div>
                 </div>
-                <div class="compact-item">
-                    <span class="compact-city">⛰️ Степанцминда</span>
-                    <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 12 · 13</div>
-                    <div class="compact-divider"></div>
-                    <span class="compact-note">заезд 12.07 в 19:00 · выезд 14.07 в 10:00</span>
+                <div class="summary-mini">
+                    <i class="fas fa-bed" style="color:#2ecc71;"></i> Гостиницы 8 ночей: Тбилиси (2), Степанцминда (2), Кутаиси (2), Батуми (2)
                 </div>
-                <div class="compact-item">
-                    <span class="compact-city">🏛️ Кутаиси</span>
-                    <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 14 · 15</div>
-                    <div class="compact-divider"></div>
-                    <span class="compact-note">заезд 14.07 в 16:00 · выезд 16.07 в 12:00</span>
-                </div>
-                <div class="compact-item">
-                    <span class="compact-city">🌊 Батуми</span>
-                    <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 16 · 17</div>
-                    <div class="compact-divider"></div>
-                    <span class="compact-note">заезд 16.07 в 15:00 · выезд 18.07 в 10:00</span>
+                <div class="summary-mini">
+                    <i class="fas fa-car" style="color:#2ecc71;"></i> Машины 8 дней: с 10:00 12.07 до 22:00 18.07
                 </div>
             </div>
-            <div class="summary-mini">
-                <i class="fas fa-bed" style="color:#2ecc71;"></i> Гостиницы 8 ночей: Тбилиси (2), Степанцминда (2), Кутаиси (2), Батуми (2)
-            </div>
-            <div class="summary-mini">
-                <i class="fas fa-car" style="color:#2ecc71;"></i> Машины 8 дней: с 10:00 12.07 до 22:00 18.07
-            </div>
-        </div>
     </div>
-</div>
+</div>            
             
             <div class="footer-note">
                 <i class="fas fa-map-pin"></i> Июль 2026 · План путешествия по Грузии
