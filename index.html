@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грузия • июль 2026 • маршрут путешествия</title>
+    
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Шрифты и иконки -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* Дополнительные стили для спойлеров дней */
+        .day-spoiler {
+            flex: 1;
+            background: transparent;
+            border-radius: 34px;
+            overflow: hidden;
+        }
+
+        .day-spoiler-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 22px -16px #146e94;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .day-spoiler-header:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateY(-1px);
+            box-shadow: 0 12px 20px -12px #146e94;
+        }
+
+        .day-spoiler-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #0d3f58;
+            flex-wrap: wrap;
+        }
+
+        .day-spoiler-title i {
+            color: #e67e22;
+        }
+
+        .spoiler-arrow {
+            color: #2980b9;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .day-spoiler.active .spoiler-arrow {
+            transform: rotate(180deg);
+        }
+
+        .day-spoiler .day-spoiler-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            margin-top: 0;
+        }
+
+        .day-spoiler.active .day-spoiler-content {
+            max-height: 800px;
+            margin-top: 10px;
+        }
+
+        .day-spoiler-title .transfer-arrow {
+            color: #2980b9;
+            font-size: 1rem;
+        }
+
+        .hotel-link {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hotel-link a {
+            color: #2980b9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .hotel-link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 680px) {
+            .day-spoiler-header {
+                padding: 12px 18px;
+            }
+            .day-spoiler-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <h1>
+                <i class="fas fa-map-marked-alt"></i> Грузия 2026 — маршрут
+            </h1>
+            <div class="flight-info">
+                <i class="fas fa-plane"></i> 11.07 прилёт 15:25 → 19.07 вылет 16:15
+            </div>
+
+            <!-- ТАЙМЛАЙН СО СПОЙЛЕРАМИ -->
+            <div class="timeline">
+
+                <!-- 11 июля: Тбилиси -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">11</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-city"></i>
+                                <span>Тбилиси</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">15:20</span>
+                                    <span class="desc">✈️ прилёт</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">16:00</span>
+                                    <span class="desc">🏡 заселение в Тбилиси</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">вечер</span>
+                                    <span class="desc">🚶 прогулка по Старому городу <br>🥟 первые хинкали в рот</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 11→12 (в Тбилиси)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/LmNzyBMN6gzXjJSb8" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Mukhrantubani Boutique Hotel
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12 июля: Тбилиси → Степанцминда -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">12</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-city"></i>
+                                <span>Тбилиси</span>
+                                <i class="fas fa-arrow-right transfer-arrow"></i>
+                                <i class="fas fa-mountain"></i>
+                                <span>Степанцминда</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">11:00</span>
+                                    <span class="desc">
+                                        🎫 аренда машин 
+                                        <a href="https://maps.app.goo.gl/Kcyfm25xj6F9PSZK6" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Geodrive Cars LLC
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">12:00</span>
+                                    <span class="desc">🔑🚙 выселение из Тбилиси, дорога в Степанцминду</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">1</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">60</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">13:00</span>
+                                    <span class="desc">
+                                        🌊 <a href="https://maps.app.goo.gl/zj7o4C5AtpFDwtE58" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Жинвальское водохранилище и горы
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">10</span>
+                                        <span class="stat-label">мин</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">10</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">14:00</span>
+                                    <span class="desc">
+                                        🏯 <a href="https://maps.app.goo.gl/3wsMGAnKvkc9VMxz8" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Крепость Ананури и горы
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">2</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">80</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">18:00</span>
+                                    <span class="desc">🏡 заселение в Степанцминде, 🍇 отдых</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 12→13 (в Степанцминде)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/2AggvNczUiRzn6XTA" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Donata Cottages kazbegi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13 июля: Степанцминда -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">13</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-mountain"></i>
+                                <span>Степанцминда</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">10:00</span>
+                                    <span class="desc">🚙🚗 Прыгаем в куперы</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">20</span>
+                                        <span class="stat-label">мин</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">15</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">10:30</span>
+                                    <span class="desc">
+                                        ⛪ <a href="https://maps.app.goo.gl/CHnESN2vHGnRUgbT9" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Гергетская Троица
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">день</span>
+                                    <span class="desc">🚶‍♂️ Долина Трусов</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">день</span>
+                                    <span class="desc">🏞️ Долина Джута</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">вечер</span>
+                                    <span class="desc">🛋️ отдых</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 13→14 (2-я в Степанцминде)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/2AggvNczUiRzn6XTA" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Donata Cottages kazbegi
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14 июля: Степанцминда → Кутаиси -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">14</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-mountain"></i>
+                                <span>Степанцминда</span>
+                                <i class="fas fa-arrow-right transfer-arrow"></i>
+                                <i class="fas fa-landmark"></i>
+                                <span>Кутаиси</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">10:00</span>
+                                    <span class="desc">🔑🚙 выселение из Степанцминды, дорога в Кутаиси</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">3</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">120</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">13:00</span>
+                                    <span class="desc">
+                                        🏛️ <a href="https://maps.app.goo.gl/3wsMGAnKvkc9VMxz8" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Собор Светицховели
+                                        </a> и Мцхета
+                                    </span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">3</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">200</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">18:00</span>
+                                    <span class="desc">🏡 заселение в Кутаиси, 🍇 отдых</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 14→15 (в Кутаиси)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/4CsmbQW18RQ9grdx7" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Gelati Residence Hotel & Restaurant
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15 июля: Кутаиси -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">15</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-landmark"></i>
+                                <span>Кутаиси</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">10:00</span>
+                                    <span class="desc">🚙🚗 Прыгаем в куперы</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">х</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">х</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">утро</span>
+                                    <span class="desc">🌲 Каньон Окаце</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">день</span>
+                                    <span class="desc">🛶 Мартвильский каньон</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">вечер</span>
+                                    <span class="desc">🛋️ отдых</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 15→16 (2-я в Кутаиси)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/4CsmbQW18RQ9grdx7" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Gelati Residence Hotel & Restaurant
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16 июля: Кутаиси → Батуми -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">16</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-landmark"></i>
+                                <span>Кутаиси</span>
+                                <i class="fas fa-arrow-right transfer-arrow"></i>
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Батуми</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">12:00</span>
+                                    <span class="desc">🔑🚙 выселение из Кутаиси, дорога в Батуми</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">3</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">170</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">15:00</span>
+                                    <span class="desc">🏡 заселение в Батуми</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag" style="background: rgba(255, 80, 140, 0.9); backdrop-filter: blur(4px); border-color: rgba(255, 150, 170, 0.3);">19:00</span>
+                                    <span class="desc">
+                                        <strong>🎤 Валерончик у девочек</strong>
+                                        <a href="https://maps.app.goo.gl/j7LVzaBK6Jkaja2Y6" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Теннисный корт
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag" style="background: rgba(102, 0, 25, 0.9); backdrop-filter: blur(4px); border-color: rgba(150, 30, 50, 0.3); color: #fff0f5;">вечер</span>
+                                    <span class="desc">🥟 хинкали у мужиков, 🍷 винишко у деда</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 16→17 (в Батуми)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/Z53iozfhUiRd48u38" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Hampton by Hilton Batumi Center
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17 июля: Батуми -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">17</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Батуми</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">10:00</span>
+                                    <span class="desc">🚙🚗 Прыгаем в куперы</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">х</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">х</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">утро</span>
+                                    <span class="desc">⛰️ выезд в горную Аджарию (водопады, виды)</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">день</span>
+                                    <span class="desc">🌊 выезд в горную Аджарию (водопады, виды)</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">вечер</span>
+                                    <span class="desc">🛋️ отдых</span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 17→18 (2-я в Батуми)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/Z53iozfhUiRd48u38" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Hampton by Hilton Batumi Center
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18 июля: Батуми → Тбилиси -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">18</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Батуми</span>
+                                <i class="fas fa-arrow-right transfer-arrow"></i>
+                                <i class="fas fa-city"></i>
+                                <span>Тбилиси</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">09:00</span>
+                                    <span class="desc">🔑🚙 выселение из Батуми, дорога в Тбилиси</span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">5</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">250</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">14:00</span>
+                                    <span class="desc">
+                                        ⛪ <a href="https://maps.app.goo.gl/A9Z1YrBbLBx6zK6p9" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> монастырь Мцване (Зеленый монастырь)
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">20</span>
+                                        <span class="stat-label">мин</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">10</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">15:00</span>
+                                    <span class="desc">
+                                        💧 <a href="https://maps.app.goo.gl/pisjWBYZjCfAT2cs6" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Боржоми (Центральный парк)
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">2</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">100</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">19:00</span>
+                                    <span class="desc">
+                                        🏜️ <a href="https://maps.app.goo.gl/axVdjmiZdKWd8PrM8" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Уплисцихе (пещерный город)
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="travel-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-clock stat-icon"></i>
+                                        <span class="stat-value">2</span>
+                                        <span class="stat-label">ч</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-road stat-icon"></i>
+                                        <span class="stat-value">100</span>
+                                        <span class="stat-label">км</span>
+                                    </div>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">22:00</span>
+                                    <span class="desc">🏡 заселение в Тбилиси</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">22:00</span>
+                                    <span class="desc">
+                                        🎫 сдача машин 
+                                        <a href="https://maps.app.goo.gl/Kcyfm25xj6F9PSZK6" target="_blank">
+                                            <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Geodrive Cars LLC
+                                        </a>
+                                    </span>
+                                </div>
+                                <span class="night-badge"><i class="fas fa-bed"></i> ночь 18→19 (в Тбилиси)</span>
+                                <div class="hotel-link">
+                                    <a href="https://maps.app.goo.gl/XNasYVMZ64vMSdVZ6" target="_blank">
+                                        <i class="fas fa-map-marked-alt" style="color: #2e8b57;"></i> Folk Boutique Hotel
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19 июля: Тбилиси -->
+                <div class="row">
+                    <div class="date-badge"><span class="day">19</span><div class="month">июля</div></div>
+                    <div class="day-spoiler">
+                        <div class="day-spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                            <div class="day-spoiler-title">
+                                <i class="fas fa-city"></i>
+                                <span>Тбилиси</span>
+                            </div>
+                            <i class="fas fa-chevron-down spoiler-arrow"></i>
+                        </div>
+                        <div class="day-spoiler-content">
+                            <div class="event-card" style="margin-top: 0;">
+                                <div class="day-part">
+                                    <span class="part-tag">12:00</span>
+                                    <span class="desc">🚶 выселение</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">день</span>
+                                    <span class="desc">🥟 крайние хинкали в рот</span>
+                                </div>
+                                <div class="day-part">
+                                    <span class="part-tag">16:15</span>
+                                    <span class="desc">✈️ вылет</span>
+                                </div>
+                                <span class="night-badge" style="background:#d4efe3;"><i class="fas fa-check-circle" style="color:#2ecc71;"></i> relax complete</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- БЛОК ДЛЯ БРОНИРОВАНИЯ ОТЕЛЕЙ (СПОЙЛЕР) -->
+            <div class="hotel-spoiler">
+                <div class="spoiler-header" onclick="this.parentElement.classList.toggle('active')">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <i class="fas fa-hotel" style="color: #e67e22; background: #fef0df; padding: 8px; border-radius: 50%;"></i>
+                        <span style="font-size: 1.6rem; font-weight: 600; color: #0f3f58;">Даты для бронирования</span>
+                    </div>
+                    <i class="fas fa-eye spoiler-icon" style="color: #2ecc71; font-size: 1.4rem; transition: all 0.3s;"></i>
+                </div>
+                
+                <div class="spoiler-content">
+                    <div class="hotel-compact" style="margin-top: 5px; box-shadow: none; border: 1px solid rgba(230, 126, 34, 0.1);">
+                        <div class="compact-grid">
+                            <div class="compact-item">
+                                <span class="compact-city">🏙️ Тбилиси</span>
+                                <div class="compact-dates"><i class="fas fa-calendar-plus"></i> 11 · 18</div>
+                                <div class="compact-divider"></div>
+                                <span class="compact-note">заезд 11.07 в 14:
