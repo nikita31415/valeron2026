@@ -708,3 +708,7 @@ h1 i {
     transform: scale(1.1);
     opacity: 0.9;
 }
+/* ===== АНИМАЦИЯ ДЛЯ ГАЛОЧКИ В СПОЙЛЕРЕ ===== */
+.hotel-spoiler.active .spoiler-arrow {
+    transform: rotate(180deg);
+}
