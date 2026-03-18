@@ -708,8 +708,8 @@ h1 i {
 .spoiler-controls {
     display: flex;
     justify-content: flex-end;
-    margin: 20px 20px 15px 0;  /* отступ справа 20px */
-    width: auto;
+    margin: 20px 20px 15px 0;
+    width: 100%;
 }
 
 .spoiler-toggle-btn {
@@ -746,15 +746,13 @@ h1 i {
     color: #2980b9;
 }
 
-/* Когда все раскрыто - меняем иконку и текст (через JS) */
-.spoiler-toggle-btn.expanded i {
-    transform: rotate(180deg);
-}
-
+/* Адаптация для мобильных */
 @media (max-width: 680px) {
     .spoiler-controls {
-        margin-left: 20px;
+        justify-content: flex-end;  /* сохраняем выравнивание справа */
+        margin: 15px 15px 10px 0;   /* уменьшаем отступы */
     }
+    
     .spoiler-toggle-btn {
         padding: 6px 18px;
         font-size: 0.85rem;
