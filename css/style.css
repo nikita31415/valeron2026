@@ -707,8 +707,9 @@ h1 i {
 /* ===== КНОПКА УПРАВЛЕНИЯ СПОЙЛЕРОМ ===== */
 .spoiler-controls {
     display: flex;
-    justify-content: flex-start;
-    margin: 20px 0 15px 28px;
+    justify-content: flex-end;
+    margin: 20px 20px 15px 0;  /* отступ справа 20px */
+    width: auto;
 }
 
 .spoiler-toggle-btn {
