@@ -749,35 +749,37 @@
     </div>
 </div>
             
-<script>
-function toggleAllSpoilers() {
-    const daySpoilers = document.querySelectorAll('.day-spoiler');
-    const hotelSpoiler = document.querySelector('.hotel-spoiler');
-    const button = document.querySelector('.spoiler-toggle-btn');
-    const icon = button.querySelector('i');
-    const textSpan = button.querySelector('span');
-    
-    // Проверяем, раскрыт ли хотя бы один спойлер
-    const anyExpanded = Array.from(daySpoilers).some(spoiler => 
-        spoiler.classList.contains('active')
-    ) || (hotelSpoiler && hotelSpoiler.classList.contains('active'));
-    
-    if (anyExpanded) {
-        // Сворачиваем все
-        daySpoilers.forEach(spoiler => spoiler.classList.remove('active'));
-        if (hotelSpoiler) hotelSpoiler.classList.remove('active');
+<!-- ===== ВСТАВИТЬ JAVASCRIPT СЮДА ===== -->
+    <script>
+    function toggleAllSpoilers() {
+        const daySpoilers = document.querySelectorAll('.day-spoiler');
+        const hotelSpoiler = document.querySelector('.hotel-spoiler');
+        const button = document.querySelector('.spoiler-toggle-btn');
+        const icon = button.querySelector('i');
+        const textSpan = button.querySelector('span');
         
-        // Меняем иконку и текст (без замены всего innerHTML)
-        icon.className = 'fas fa-chevron-down';
-        textSpan.textContent = 'Развернуть все';
-    } else {
-        // Раскрываем все
-        daySpoilers.forEach(spoiler => spoiler.classList.add('active'));
-        if (hotelSpoiler) hotelSpoiler.classList.add('active');
+        // Проверяем, раскрыт ли хотя бы один спойлер
+        const anyExpanded = Array.from(daySpoilers).some(spoiler => 
+            spoiler.classList.contains('active')
+        ) || (hotelSpoiler && hotelSpoiler.classList.contains('active'));
         
-        // Меняем иконку и текст
-        icon.className = 'fas fa-chevron-up';
-        textSpan.textContent = 'Свернуть все';
+        if (anyExpanded) {
+            // Сворачиваем все
+            daySpoilers.forEach(spoiler => spoiler.classList.remove('active'));
+            if (hotelSpoiler) hotelSpoiler.classList.remove('active');
+            
+            // Меняем иконку и текст
+            icon.className = 'fas fa-chevron-down';
+            textSpan.textContent = 'Развернуть все';
+        } else {
+            // Раскрываем все
+            daySpoilers.forEach(spoiler => spoiler.classList.add('active'));
+            if (hotelSpoiler) hotelSpoiler.classList.add('active');
+            
+            // Меняем иконку и текст
+            icon.className = 'fas fa-chevron-up';
+            textSpan.textContent = 'Свернуть все';
+        }
     }
-}
-</script>
+    </script>
+
