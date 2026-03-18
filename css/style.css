@@ -698,3 +698,13 @@ h1 i {
         font-size: 1rem;
     }
 }
+
+/* ===== АНИМАЦИЯ ДЛЯ ГАЛОЧКИ В СПОЙЛЕРЕ ===== */
+.spoiler-icon {
+    transition: all 0.3s ease;
+}
+
+.hotel-spoiler.active .spoiler-icon {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
