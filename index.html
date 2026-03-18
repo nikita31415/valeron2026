@@ -754,6 +754,8 @@ function toggleAllSpoilers() {
     const daySpoilers = document.querySelectorAll('.day-spoiler');
     const hotelSpoiler = document.querySelector('.hotel-spoiler');
     const button = document.querySelector('.spoiler-toggle-btn');
+    const icon = button.querySelector('i');
+    const textSpan = button.querySelector('span');
     
     // Проверяем, раскрыт ли хотя бы один спойлер
     const anyExpanded = Array.from(daySpoilers).some(spoiler => 
@@ -761,28 +763,21 @@ function toggleAllSpoilers() {
     ) || (hotelSpoiler && hotelSpoiler.classList.contains('active'));
     
     if (anyExpanded) {
-        // Если есть раскрытые - сворачиваем все
-        daySpoilers.forEach(spoiler => {
-            spoiler.classList.remove('active');
-        });
-        if (hotelSpoiler) {
-            hotelSpoiler.classList.remove('active');
-        }
-        button.innerHTML = '<i class="fas fa-chevron-down"></i> Развернуть все';
-        button.classList.remove('expanded');
+        // Сворачиваем все
+        daySpoilers.forEach(spoiler => spoiler.classList.remove('active'));
+        if (hotelSpoiler) hotelSpoiler.classList.remove('active');
+        
+        // Меняем иконку и текст (без замены всего innerHTML)
+        icon.className = 'fas fa-chevron-down';
+        textSpan.textContent = 'Развернуть все';
     } else {
-        // Если все закрыты - раскрываем все
-        daySpoilers.forEach(spoiler => {
-            spoiler.classList.add('active');
-        });
-        if (hotelSpoiler) {
-            hotelSpoiler.classList.add('active');
-        }
-        button.innerHTML = '<i class="fas fa-chevron-up"></i> Свернуть все';
-        button.classList.add('expanded');
+        // Раскрываем все
+        daySpoilers.forEach(spoiler => spoiler.classList.add('active'));
+        if (hotelSpoiler) hotelSpoiler.classList.add('active');
+        
+        // Меняем иконку и текст
+        icon.className = 'fas fa-chevron-up';
+        textSpan.textContent = 'Свернуть все';
     }
 }
-
-// Дополнительно: можно обновлять кнопку при ручном открытии/закрытии
-// Но это не обязательно, кнопка будет работать в любом случае
 </script>
