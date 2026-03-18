@@ -120,11 +120,8 @@
                 <i class="fas fa-map-marked-alt"></i> Грузия 2026 — маршрут
             </h1>
         <div class="spoiler-controls">
-            <button class="spoiler-btn" onclick="expandAll()">
+            <button class="spoiler-toggle-btn" onclick="toggleAllSpoilers()">
                 <i class="fas fa-chevron-down"></i> Развернуть все
-            </button>
-            <button class="spoiler-btn" onclick="collapseAll()">
-                <i class="fas fa-chevron-up"></i> Свернуть все
             </button>
         </div>
             
@@ -753,27 +750,39 @@
 </div>
             
 <script>
-function expandAll() {
-    // Развернуть все спойлеры дней
-    document.querySelectorAll('.day-spoiler').forEach(spoiler => {
-        spoiler.classList.add('active');
-    });
-    // Развернуть спойлер отелей
+function toggleAllSpoilers() {
+    const daySpoilers = document.querySelectorAll('.day-spoiler');
     const hotelSpoiler = document.querySelector('.hotel-spoiler');
-    if (hotelSpoiler) {
-        hotelSpoiler.classList.add('active');
+    const button = document.querySelector('.spoiler-toggle-btn');
+    
+    // Проверяем, раскрыт ли хотя бы один спойлер
+    const anyExpanded = Array.from(daySpoilers).some(spoiler => 
+        spoiler.classList.contains('active')
+    ) || (hotelSpoiler && hotelSpoiler.classList.contains('active'));
+    
+    if (anyExpanded) {
+        // Если есть раскрытые - сворачиваем все
+        daySpoilers.forEach(spoiler => {
+            spoiler.classList.remove('active');
+        });
+        if (hotelSpoiler) {
+            hotelSpoiler.classList.remove('active');
+        }
+        button.innerHTML = '<i class="fas fa-chevron-down"></i> Развернуть все';
+        button.classList.remove('expanded');
+    } else {
+        // Если все закрыты - раскрываем все
+        daySpoilers.forEach(spoiler => {
+            spoiler.classList.add('active');
+        });
+        if (hotelSpoiler) {
+            hotelSpoiler.classList.add('active');
+        }
+        button.innerHTML = '<i class="fas fa-chevron-up"></i> Свернуть все';
+        button.classList.add('expanded');
     }
 }
 
-function collapseAll() {
-    // Свернуть все спойлеры дней
-    document.querySelectorAll('.day-spoiler').forEach(spoiler => {
-        spoiler.classList.remove('active');
-    });
-    // Свернуть спойлер отелей
-    const hotelSpoiler = document.querySelector('.hotel-spoiler');
-    if (hotelSpoiler) {
-        hotelSpoiler.classList.remove('active');
-    }
-}
+// Дополнительно: можно обновлять кнопку при ручном открытии/закрытии
+// Но это не обязательно, кнопка будет работать в любом случае
 </script>
