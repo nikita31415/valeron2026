@@ -119,6 +119,14 @@
             <h1>
                 <i class="fas fa-map-marked-alt"></i> Грузия 2026 — маршрут
             </h1>
+        <div class="spoiler-controls">
+            <button class="spoiler-btn" onclick="expandAll()">
+                <i class="fas fa-chevron-down"></i> Развернуть все
+            </button>
+            <button class="spoiler-btn" onclick="collapseAll()">
+                <i class="fas fa-chevron-up"></i> Свернуть все
+            </button>
+        </div>
             
 
             <!-- ТАЙМЛАЙН СО СПОЙЛЕРАМИ -->
@@ -743,3 +751,29 @@
         </div>
     </div>
 </div>
+            
+<script>
+function expandAll() {
+    // Развернуть все спойлеры дней
+    document.querySelectorAll('.day-spoiler').forEach(spoiler => {
+        spoiler.classList.add('active');
+    });
+    // Развернуть спойлер отелей
+    const hotelSpoiler = document.querySelector('.hotel-spoiler');
+    if (hotelSpoiler) {
+        hotelSpoiler.classList.add('active');
+    }
+}
+
+function collapseAll() {
+    // Свернуть все спойлеры дней
+    document.querySelectorAll('.day-spoiler').forEach(spoiler => {
+        spoiler.classList.remove('active');
+    });
+    // Свернуть спойлер отелей
+    const hotelSpoiler = document.querySelector('.hotel-spoiler');
+    if (hotelSpoiler) {
+        hotelSpoiler.classList.remove('active');
+    }
+}
+</script>
