@@ -543,8 +543,8 @@ h1 i {
         display: none;
     }
     .stat-item {
-        width: 100%;
-        justify-content: center;
+   
+        justify-content: flex-start;
     }
 }
 
