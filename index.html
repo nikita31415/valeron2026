@@ -750,7 +750,8 @@
 </div>
             
 <script>
-function toggleAllSpoilers() {
+// Функция для обновления состояния кнопки
+function updateToggleButton() {
     const daySpoilers = document.querySelectorAll('.day-spoiler');
     const hotelSpoiler = document.querySelector('.hotel-spoiler');
     const button = document.querySelector('.spoiler-toggle-btn');
@@ -761,20 +762,56 @@ function toggleAllSpoilers() {
     ) || (hotelSpoiler && hotelSpoiler.classList.contains('active'));
     
     if (anyExpanded) {
+        button.innerHTML = '<i class="fas fa-chevron-up"></i> Свернуть все';
+    } else {
+        button.innerHTML = '<i class="fas fa-chevron-down"></i> Развернуть все';
+    }
+}
+
+// Функция для переключения всех спойлеров
+function toggleAllSpoilers() {
+    const daySpoilers = document.querySelectorAll('.day-spoiler');
+    const hotelSpoiler = document.querySelector('.hotel-spoiler');
+    
+    // Проверяем, раскрыт ли хотя бы один спойлер
+    const anyExpanded = Array.from(daySpoilers).some(spoiler => 
+        spoiler.classList.contains('active')
+    ) || (hotelSpoiler && hotelSpoiler.classList.contains('active'));
+    
+    if (anyExpanded) {
         // Сворачиваем все
         daySpoilers.forEach(spoiler => spoiler.classList.remove('active'));
         if (hotelSpoiler) hotelSpoiler.classList.remove('active');
-        
-        // Меняем содержимое кнопки целиком
-        button.innerHTML = '<i class="fas fa-chevron-down"></i> Развернуть все';
     } else {
         // Раскрываем все
         daySpoilers.forEach(spoiler => spoiler.classList.add('active'));
         if (hotelSpoiler) hotelSpoiler.classList.add('active');
-        
-        // Меняем содержимое кнопки целиком
-        button.innerHTML = '<i class="fas fa-chevron-up"></i> Свернуть все';
     }
+    
+    // Обновляем кнопку
+    updateToggleButton();
 }
+
+// Добавляем обработчики для каждого спойлера
+document.addEventListener('DOMContentLoaded', function() {
+    // Для спойлеров дней
+    document.querySelectorAll('.day-spoiler-header').forEach(header => {
+        header.addEventListener('click', function() {
+            // Небольшая задержка, чтобы спойлер успел открыться/закрыться
+            setTimeout(updateToggleButton, 50);
+        });
+    });
+    
+    // Для спойлера отелей
+    const hotelHeader = document.querySelector('.hotel-spoiler .spoiler-header');
+    if (hotelHeader) {
+        hotelHeader.addEventListener('click', function() {
+            setTimeout(updateToggleButton, 50);
+        });
+    }
+    
+    // Инициализация при загрузке
+    updateToggleButton();
+});
 </script>
 
