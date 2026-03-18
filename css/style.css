@@ -700,15 +700,6 @@ h1 i {
 }
 
 /* ===== АНИМАЦИЯ ДЛЯ ГАЛОЧКИ В СПОЙЛЕРЕ ===== */
-.spoiler-icon {
-    transition: all 0.3s ease;
-}
-
-.hotel-spoiler.active .spoiler-icon {
-    transform: scale(1.1);
-    opacity: 0.9;
-}
-/* ===== АНИМАЦИЯ ДЛЯ ГАЛОЧКИ В СПОЙЛЕРЕ ===== */
 .hotel-spoiler.active .spoiler-arrow {
     transform: rotate(180deg);
 }
