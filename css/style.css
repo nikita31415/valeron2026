@@ -704,31 +704,30 @@ h1 i {
     transform: rotate(180deg);
 }
 
-/* ===== КНОПКИ УПРАВЛЕНИЯ СПОЙЛЕРАМИ ===== */
+/* ===== КНОПКА УПРАВЛЕНИЯ СПОЙЛЕРОМ ===== */
 .spoiler-controls {
     display: flex;
-    gap: 10px;
-    margin: 20px 0 15px 28px; /* отступ как у таймлайна */
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 20px 0 15px 28px;
 }
 
-.spoiler-btn {
+.spoiler-toggle-btn {
     background: white;
     border: 1px solid #cae0ee;
     border-radius: 60px;
-    padding: 8px 20px;
-    font-size: 0.9rem;
+    padding: 8px 22px;
+    font-size: 0.95rem;
     font-weight: 500;
     color: #0f567a;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: all 0.2s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
-.spoiler-btn:hover {
+.spoiler-toggle-btn:hover {
     background: #f0f7ff;
     border-color: #2980b9;
     color: #2980b9;
@@ -736,21 +735,27 @@ h1 i {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.spoiler-btn i {
-    font-size: 0.8rem;
+.spoiler-toggle-btn i {
+    font-size: 0.85rem;
+    color: #2980b9;
+    transition: transform 0.3s ease;
+}
+
+.spoiler-toggle-btn:hover i {
     color: #2980b9;
 }
 
-.spoiler-btn:hover i {
-    color: #2980b9;
+/* Когда все раскрыто - меняем иконку и текст (через JS) */
+.spoiler-toggle-btn.expanded i {
+    transform: rotate(180deg);
 }
 
 @media (max-width: 680px) {
     .spoiler-controls {
         margin-left: 20px;
     }
-    .spoiler-btn {
-        padding: 6px 16px;
-        font-size: 0.8rem;
+    .spoiler-toggle-btn {
+        padding: 6px 18px;
+        font-size: 0.85rem;
     }
 }
