@@ -789,20 +789,18 @@ h1 i {
 .card {
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .card::before {
     content: "";
     position: absolute;
-    right: -90px;
-    top: 80px;
-    width: 420px;
-    height: 420px;
-    background-image: url("../img/georgia-coat.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.055;
+    right: -60px;
+    top: 90px;
+    width: 520px;
+    height: 520px;
+    background: url("../img/georgia-coat.png") center / contain no-repeat;
+    opacity: 0.18;
     pointer-events: none;
     z-index: 0;
 }
