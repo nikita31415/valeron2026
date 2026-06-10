@@ -88,12 +88,17 @@ h1 i {
 .date-badge {
     width: 100px;
     flex-shrink: 0;
-    background: white;
+
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+
     border-radius: 60px;
     padding: 15px 5px;
     text-align: center;
-    box-shadow: 0 12px 24px -14px #1c5879;
-    border: 1px solid white;
+
+    box-shadow: 0 8px 18px -14px #1c5879;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+
     font-weight: 600;
     align-self: flex-start;
 }
@@ -101,7 +106,7 @@ h1 i {
 .date-badge .day {
     font-size: 2.2rem;
     font-weight: 800;
-    color: #e67e22;
+    color: #d88a42;
     line-height: 1;
 }
 
