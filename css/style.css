@@ -20,6 +20,8 @@ body {
 }
 
 .card {
+    position: relative;
+    overflow: hidden;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     border-radius: 56px;
@@ -784,12 +786,6 @@ h1 i {
 .day-km i {
     color: #e67e22;
     font-size: 0.8rem;
-}
-
-.card {
-    position: relative;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.8);
 }
 
 .card::before {
