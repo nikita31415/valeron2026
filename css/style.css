@@ -819,7 +819,7 @@ h1 i {
 /* Телефон */
 @media (max-width: 680px) {
     .card::before {
-        top: 20px;
+        top: 50px;
         left: 50%;
         right: auto;
 
