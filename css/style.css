@@ -803,17 +803,33 @@ h1 i {
     position: absolute;
 
     top: 10px;
-    right: 50%;
+    right: 80px;
 
     width: 330px;
     height: 330px;
 
     background: url("../img/georgia-coat.png") center / contain no-repeat;
 
-    opacity: 0.3;
+    opacity: 0.2;
 
     pointer-events: none;
     z-index: 0;
+}
+
+/* Телефон */
+@media (max-width: 680px) {
+    .card::before {
+        top: 20px;
+        left: 50%;
+        right: auto;
+
+        width: 180px;
+        height: 180px;
+
+        transform: translateX(-50%);
+
+        opacity: 0.06;
+    }
 }
 
 .card > * {
