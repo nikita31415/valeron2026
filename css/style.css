@@ -823,12 +823,12 @@ h1 i {
         left: 50%;
         right: auto;
 
-        width: 180px;
-        height: 180px;
+        width: 250px;
+        height: 250px;
 
         transform: translateX(-50%);
 
-        opacity: 0.06;
+        opacity: 0.2;
     }
 }
 
